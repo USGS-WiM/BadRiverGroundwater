@@ -1,0 +1,48 @@
+#paramSelect {
+	height:120px;
+	width:400px;
+
+}
+
+.paramSelectorRoot {
+   
+	/* Fallback for web browsers that doesn't support RGBa */
+	background: rgb(51, 51, 51);
+	/* RGBa with 0.6 opacity */
+	/*background: rgba(51, 51, 51, 0.6);*/
+	/* For IE 5.5 - 7*/
+	/*filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#33333300, endColorstr=#33333300);
+	/* For IE 8*/
+	/*-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#33333300, endColorstr=#33333300)";*/
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	color:#fff;
+	text-align: center;
+	vertical-align:super;
+	-moz-box-align:center;
+	-webkit-box-align:center;
+	box-align:start;
+	position: absolute;
+	top: 10px;
+	z-index: 40;
+	width:500;
+	line-height:100%;
+	font-family:Verdana, Geneva, sans-serif;
+	margin:0px;
+	left:50%;
+		
+}
+
+.paramSelectorMoDrop, .paramSelectorAiDrop {
+	
+	text-align: left;
+	font-weight:bold;
+}
+
+.paramSelectorhr {
+	width:98%;
+	height:2px;
+	margin: 0px auto;
+	
+}

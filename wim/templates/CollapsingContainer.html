@@ -1,0 +1,12 @@
+<div data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design:'sidebar', gutters:true, liveSplitters:true" class="${baseClass}Root">	
+    <div class="${baseClass}Icon" title="Click to expand/collapse available layers"
+        data-dojo-attach-event="ondijitclick:_onIconClick"><img id="${baseClass}Image" src="wim/images/collapsingContainerIcon.png" width="16" height="16" alt="legend"></div>
+    <div class="${baseClass}Title" 
+        data-dojo-attach-point="titleNode"></div>
+    <div id="${baseClass}Content"> 
+		<div class="${baseClass}Inner" 
+             data-dojo-attach-point="containerNode"></div>
+    </div>
+</div>
+
+

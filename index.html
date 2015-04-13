@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ground Water Flow Mapper</title>
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=7,IE=9">
+    <!--The viewport meta tag is used to improve the presentation and behavior of the samples on iOS devices-->
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
+    
+    <!-- ArcGIS Javascript API and dojo theme references (update number to keep most current version) -->
+    <link rel="stylesheet" href="http://serverapi.arcgisonline.com/jsapi/arcgis/3.5/js/dojo/dijit/themes/claro/claro.css">
+	<link rel="stylesheet" href="http://serverapi.arcgisonline.com/jsapi/arcgis/3.5/js/esri/css/esri.css" />
+    
+    <!-- references to JS files of modules used -->
+    <script src="js/geocoder.js" type="text/javascript"></script>
+    <script src="js/geolocator.js" type="text/javascript"></script>
+    
+    <!-- Style sheet references -->
+    <link rel="stylesheet" media="screen" type="text/css" href="styles/main.css"/>
+    <link rel="stylesheet" media="only screen and (max-device-width: 480px)" type="text/css" href="styles/handheld.css"/>
+    <link rel="stylesheet" type="text/css" href="wim/css/wim.css">
+     
+    <!-- IMPORTANT: The below block of code is essential. It tells the browser to parse the page using the Dojo framework. 
+	Mapper wont work without it. *It also is key that it comes BEFORE the reference to the JS API, below on line 38.*<br>
+	Finally, this block also defines the namespace/path (packages) for modules used, both in global "wim" lib and the local "modules" lib.-->  
+    <script type="text/javascript">
+		var dojoConfig = {
+        	parseOnLoad: true,
+			packages: [
+            	{ name: "modules", location: location.pathname.replace(/\/[^/]+$/, "") + "\/modules" },
+				{ name: "wim",location: location.pathname.replace(/\/[^/]+$/, "") + "\/wim"}
+            ]
+        };
+    </script> 
+    
+    <!-- IMPORTANT:  ArcGIS Javascript API reference -->
+	<script src="http://serverapi.arcgisonline.com/jsapi/arcgis/3.5/" type="text/javascript"></script>  
+    <!-- IMPORTANT: Mapper JS file  -->
+    <script src="js/groundwaterFlowMapper.js" type="text/javascript"></script>    
+</head>
+    
+<!-- Below is the HTML body, which outlines the UI for the mapper. All the UI elements must have a node in the DOM and are declared in 
+this section. This section can be variable depending on mapper needs, but should generally stay close to this outline. Note the 
+defintion of the "claro" class for the body div. This refers to the Dojo theme called Claro, and should correspond with the stylesheet 
+referenced above. There are other Dojo style themes: Tundra, Soria, and Nihlio. -->  
+<body class="claro">
+	<div data-dojo-type="dijit.layout.BorderContainer" data-dojo-props="design:'headline',gutters:false" style="width:100%;height:100%;margin:0;">
+        <div id="map" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="region:'center'" style="padding:0;">
+        <div id="refreshScreen" data-dojo-type="wim.RefreshScreen" data-dojo-props="attachedMapID: 'map'"></div>
+            <!-- basemap selection tool -->
+            <div id="basemapSelector" >
+              <div data-dojo-type="dijit.TitlePane" data-dojo-props="title:'<img src=\'images/basemap_new_small.png\'> Basemaps', closable:false, open:false">
+                <div data-dojo-type="dijit.layout.ContentPane" style="width:380px; height:360px; overflow:auto;">
+                    <div id="basemapGallery" ></div>
+                </div>
+              </div>
+            </div>
+           
+            <!-- Header with logo and title -->
+           <div id="header">
+                <div id="headerLogo">
+                	<div id="usgsLogoDiv">
+                		<img id="usgsLogo" alt="USGS Logo" src="images/usgsLogo.png" title="USGS Links"/>
+                	</div>                
+                    <div id="titles">
+                    	<div id="betaTitle">BETA VERSION</div>
+                        <div id="title">Groundwater Flow </div>
+                        <div id="titleSeparator">:</div>
+                        <div id="subTitle">Predictions for New Data Worth Analysis</div>
+                    </div>
+                 </div>
+           </div>
+            
+           <!-- the extent navigator with forward, backward and full extent buttons -->    
+           <div id="extentSelector" data-dojo-type="wim.ExtentNav" data-dojo-props="attachedMapID: 'map'"></div>
+           
+           <!-- Div for holding the lat/long indicator bar at the bottom of the screen. 
+           Adding the lat/long bar programmatically after the map has loaded.  -->
+           <div id="latLngScaleBar"></div>
+            
+           <!-- geocoder -->
+           <div id="geocodeBar"> 
+               <input id="geocode" type="text" name="search" onKeyPress="enterKeyLocate(event)" placeholder="Find address or place" />
+               <input id="searchIcon" type="image" src="images/searchIcon.png" alt="Submit" onClick="locate()" />                
+           </div>
+          
+           <!-- Available layers, TOC and legend element -->
+           <div id="layerStuff">
+	           <div id="availableLayers" data-dojo-type="wim.CollapsingContainer" data-dojo-props="title:'MAP LAYERS',imageUrl:'images/basemap_new_small.png'">
+	               <div data-dojo-type="dijit.layout.ContentPane" data-dojo-props="title:'Click to toggle'">
+	                   <div id="toggle" style="padding: 2px 2px;"></div>
+                     <button id="rasterButton" style="display:none; height:30px; margin-top:5px;" onclick="toggleRaster();"></button>
+					           <button id="drawButton" style="display:none; height:30px; margin-top:5px;" onclick="drawBox();" >Draw Box to Select Points</button>
+					           <button id="hideButton" type="button" style="display:none; height:30px; margin-top:5px;" onclick="hideUncertaintyLayer();">Clear Selection</button>
+	               </div>
+	           </div>
+	           <div id="explanation" data-dojo-type="wim.CollapsingContainer" data-dojo-props="title:'EXPLANATION',imageUrl:'images/basemap_new_small.png'">
+	           	   <div id="legend" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="title:'Explanation',selected:true">
+	               	   <div id="legendDiv"></div>
+					           <div id="legendExplanation" style="visibility:hidden;"> 0.0 = No reduction in prediction uncertainty</div></br>
+					           <div id="legendExplanation2" style="visibility:hidden;"> 1.0 = 100% reduction in prediction uncertainty</div>
+	               </div>
+	           </div>
+           </div>
+	           
+           
+            <div id="loadingScreen" data-dojo-type="wim.LoadingScreen" data-dojo-props="region:'center', attachedMapID: 'map'" ></div> 
+        </div>
+	</div>
+</body>
+</html>
