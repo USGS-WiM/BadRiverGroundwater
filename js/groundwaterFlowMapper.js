@@ -71,6 +71,7 @@ function init() {
 		slider: true,
 		sliderStyle: "large", //use "small" for compact version
 		logo:false,
+		showAttribution:false,
 		infoWindow: popup
 	});
 	
