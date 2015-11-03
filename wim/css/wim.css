@@ -317,3 +317,23 @@
 	box-shadow:0 0 5px #e7e4ce;
 }
 
+/*removes 'Zoom To' link in the esri infoWindow*/
+.actionList{
+	display:none;
+}
+
+.ui-widget-content{
+	font-size:14px !important;
+	color: #59595C !important;
+}
+
+.helpDialog{
+	width:650px !important;
+	overflow:hidden !important;
+}
+
+#helpIcon{
+	float:right;
+	cursor:pointer;
+	padding-top:5px;
+}

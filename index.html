@@ -34,6 +34,10 @@
         };
     </script> 
     
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
+
     <!-- IMPORTANT:  ArcGIS Javascript API reference -->
 	<script src="http://serverapi.arcgisonline.com/jsapi/arcgis/3.5/" type="text/javascript"></script>  
     <!-- IMPORTANT: Mapper JS file  -->
@@ -49,6 +53,12 @@ referenced above. There are other Dojo style themes: Tundra, Soria, and Nihlio. 
         <div id="map" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="region:'center'" style="padding:0;">
         <div id="refreshScreen" data-dojo-type="wim.RefreshScreen" data-dojo-props="attachedMapID: 'map'"></div>
             <!-- basemap selection tool -->
+        <div id="helpDialog" title="Additional Information" style="display:none">
+          <p>New Data Worth Analysis was performed to evaluate optimal locations for new monitoring wells to improve 29 different model predictions, shown on the map as squares (groundwater levels) or triangles (baseflows). To view New Data Worth for a model prediction, clear the current selection (if the “Clear Selection” button is present in the Map Layers box), and then click the marker symbol for the prediction.</p>
+          <p>The New Data Worth values are expressed as a normalized reduction in model prediction uncertainty, with values near 1 indicating an almost complete (near 100%) reduction in prediction uncertainty (high data worth), and zero values indicating no reduction in model prediction uncertainty. Clusters of higher data worth indicate the best locations for new monitoring well, from the standpoint of improving the groundwater model.</p>
+          <p>For more information on the New Data Worth Analysis performed for this study, see the section titled “New Data-Worth Analysis,” and Appendix 6 of the report.</p>
+        </div>
+
             <div id="basemapSelector" >
               <div data-dojo-type="dijit.TitlePane" data-dojo-props="title:'<img src=\'images/basemap_new_small.png\'> Basemaps', closable:false, open:false">
                 <div data-dojo-type="dijit.layout.ContentPane" style="width:380px; height:360px; overflow:auto;">
@@ -67,7 +77,9 @@ referenced above. There are other Dojo style themes: Tundra, Soria, and Nihlio. 
                     	<div id="betaTitle">BETA VERSION</div>
                         <div id="title">Groundwater Flow </div>
                         <div id="titleSeparator">:</div>
-                        <div id="subTitle">Predictions for New Data Worth Analysis</div>
+                        <div id="subTitle">Predictions for New Data Worth Analysis
+                          <img id="helpIcon" src="images/MoreInfo.png" title="Show Help" style="cursor:pointer">
+                        </div>
                     </div>
                  </div>
            </div>
@@ -97,9 +109,11 @@ referenced above. There are other Dojo style themes: Tundra, Soria, and Nihlio. 
 	           </div>
 	           <div id="explanation" data-dojo-type="wim.CollapsingContainer" data-dojo-props="title:'EXPLANATION',imageUrl:'images/basemap_new_small.png'">
 	           	   <div id="legend" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="title:'Explanation',selected:true">
-	               	   <div id="legendDiv"></div>
-					           <div id="legendExplanation" style="visibility:hidden;"> 0.0 = No reduction in prediction uncertainty</div></br>
-					           <div id="legendExplanation2" style="visibility:hidden;"> 1.0 = 100% reduction in prediction uncertainty</div>
+	               	   <div id="legendExplanation" style="display:none; padding-bottom:10px;"> 0.0 = No reduction in prediction uncertainty</div></br>
+                     <div id="legendExplanation2" style="display:none; padding-bottom:10px;"> 1.0 = 100% reduction in prediction uncertainty</div>
+                     <div id="rasterExplanation" style="display:none; padding-bottom:10px;"> Raster surface is interpolated from uncertainty point layer. </div>
+                     <div id="legendDiv"></div>
+					           
 	               </div>
 	           </div>
            </div>

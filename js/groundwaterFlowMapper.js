@@ -129,6 +129,7 @@ function init() {
 	legendLayers.push({layer:WTContours, title: 'Water Table Contours'});
 	legendLayers.push({layer:reservationBounds, title: 'Bad River Reservation Boundary'});
 	legendLayers.push({layer:pitMinePoly, title: 'Proposed Mining Location'});
+	legendLayers.push({layer:predictionLocations, title:'Model Prediction Locations (Click a location marker on the map to view New Data Worth for each prediction).'})
 	//legendLayers.push({layer:streamflow, title: 'Bad River Streamflow'});
 
 	//organize the checkbox
@@ -146,203 +147,203 @@ function init() {
 		id: 'drawDown1'
 	});
 	drawDown1Points.setVisibleLayers([0]);
-	legendLayers.push({layer:drawDown1Points,title:'Normalized Uncertainty Reduction for Groundwater levels Prediction1'});
+	legendLayers.push({layer:drawDown1Points,title:'New Data Worth for reducing model uncertainty in predicting Groundwater levels Prediction1'});
 
 	var drawDown2Points = new esri.layers.ArcGISDynamicMapServiceLayer("http://wim.usgs.gov/arcgis/rest/services/BadRiver/PREDUNC_results_No_Raster/MapServer", {
 		"visible":false,
 		id: 'drawDown2'
 	});
 	drawDown2Points.setVisibleLayers([1]);
-	legendLayers.push({layer:drawDown2Points,title:'Normalized Uncertainty Reduction for Groundwater levels Prediction2'});
+	legendLayers.push({layer:drawDown2Points,title:'New Data Worth for reducing model uncertainty in predicting Groundwater levels Prediction2'});
 
 	var drawDown3Points = new esri.layers.ArcGISDynamicMapServiceLayer("http://wim.usgs.gov/arcgis/rest/services/BadRiver/PREDUNC_results_No_Raster/MapServer", {
 		"visible":false,
 		id: 'drawDown3'
 	});
 	drawDown3Points.setVisibleLayers([2]);
-	legendLayers.push({layer:drawDown3Points,title:'Normalized Uncertainty Reduction for Groundwater levels Prediction3'});
+	legendLayers.push({layer:drawDown3Points,title:'New Data Worth for reducing model uncertainty in predicting Groundwater levels Prediction3'});
 
 	var fishHatchPoints = new esri.layers.ArcGISDynamicMapServiceLayer("http://wim.usgs.gov/arcgis/rest/services/BadRiver/PREDUNC_results_No_Raster/MapServer", {
 		"visible":false,
 		id: 'fishHatch'
 	});
 	fishHatchPoints.setVisibleLayers([3]);
-	legendLayers.push({layer:fishHatchPoints,title:'Normalized Uncertainty Reduction for Water level in artesian well at Bad River Fish Hatchery'});
+	legendLayers.push({layer:fishHatchPoints,title:'New Data Worth for reducing model uncertainty in predicting Water level in artesian well at Bad River Fish Hatchery'});
 
 	var resSwPoints = new esri.layers.ArcGISDynamicMapServiceLayer("http://wim.usgs.gov/arcgis/rest/services/BadRiver/PREDUNC_results_No_Raster/MapServer", {
 		"visible":false,
 		id: 'resSw'
 	});
 	resSwPoints.setVisibleLayers([4]);
-	legendLayers.push({layer:resSwPoints,title:'Normalized Uncertainty Reduction for Groundwater levels at southwest corner of reservation'});
+	legendLayers.push({layer:resSwPoints,title:'New Data Worth for reducing model uncertainty in predicting Groundwater levels at southwest corner of reservation'});
 	
 	var resSePoints = new esri.layers.ArcGISDynamicMapServiceLayer("http://wim.usgs.gov/arcgis/rest/services/BadRiver/PREDUNC_results_No_Raster/MapServer", {
 		"visible":false,
 		id: 'resSe'
 	});
 	resSePoints.setVisibleLayers([5]);
-	legendLayers.push({layer:resSePoints,title:'Normalized Uncertainty Reduction for Groundwater levels at southeast corner of reservation'});
+	legendLayers.push({layer:resSePoints,title:'New Data Worth for reducing model uncertainty in predicting Groundwater levels at southeast corner of reservation'});
 
 	var resSPoints = new esri.layers.ArcGISDynamicMapServiceLayer("http://wim.usgs.gov/arcgis/rest/services/BadRiver/PREDUNC_results_No_Raster/MapServer", {
 		"visible":false,
 		id: 'resS'
 	});
 	resSPoints.setVisibleLayers([6]);
-	legendLayers.push({layer:resSPoints,title:'Normalized Uncertainty Reduction for Groundwater levels near middle part of southern reservation boundary'});
+	legendLayers.push({layer:resSPoints,title:'New Data Worth for reducing model uncertainty in predicting Groundwater levels near middle part of southern reservation boundary'});
 
 	var carolinePoints = new esri.layers.ArcGISDynamicMapServiceLayer("http://wim.usgs.gov/arcgis/rest/services/BadRiver/PREDUNC_results_No_Raster/MapServer", {
 		"visible":false,
 		id: 'caroline'
 	});
 	carolinePoints.setVisibleLayers([7]);
-	legendLayers.push({layer:carolinePoints,title:'Normalized Uncertainty Reduction for Groundwater levels near Caroline Lake'});
+	legendLayers.push({layer:carolinePoints,title:'New Data Worth for reducing model uncertainty in predicting Groundwater levels near Caroline Lake'});
 
 	var obrienPoints = new esri.layers.ArcGISDynamicMapServiceLayer("http://wim.usgs.gov/arcgis/rest/services/BadRiver/PREDUNC_results_No_Raster/MapServer", {
 		"visible":false,
 		id: 'obrien'
 	});
 	obrienPoints.setVisibleLayers([8]);
-	legendLayers.push({layer:obrienPoints,title:"Normalized Uncertainty Reduction for Groundwater levels near O'brien Lake"});
+	legendLayers.push({layer:obrienPoints,title:"New Data Worth for reducing model uncertainty in predicting Groundwater levels near O'brien Lake"});
 
 	var mccarthyPoints = new esri.layers.ArcGISDynamicMapServiceLayer("http://wim.usgs.gov/arcgis/rest/services/BadRiver/PREDUNC_results_No_Raster/MapServer", {
 		"visible":false,
 		id: 'mccarthy'
 	});
 	mccarthyPoints.setVisibleLayers([9]);
-	legendLayers.push({layer:mccarthyPoints,title:'Normalized Uncertainty Reduction for Groundwater levels near McCarthy Lake'});
+	legendLayers.push({layer:mccarthyPoints,title:'New Data Worth for reducing model uncertainty in predicting Groundwater levels near McCarthy Lake'});
 
 	var bad169Points = new esri.layers.ArcGISDynamicMapServiceLayer("http://wim.usgs.gov/arcgis/rest/services/BadRiver/PREDUNC_results_No_Raster/MapServer", {
 		"visible":false,
 		id: 'bad169'
 	});
 	bad169Points.setVisibleLayers([10]);
-	legendLayers.push({layer:bad169Points,title:'Normalized Uncertainty Reduction for Bad River baseflow at highway 169'});
+	legendLayers.push({layer:bad169Points,title:'New Data Worth for reducing model uncertainty in predicting Bad River baseflow at highway 169'});
 
 	var tyGehrmanPoints = new esri.layers.ArcGISDynamicMapServiceLayer("http://wim.usgs.gov/arcgis/rest/services/BadRiver/PREDUNC_results_No_Raster/MapServer", {
 		"visible":false,
 		id: 'tyGehrman'
 	});
 	tyGehrmanPoints.setVisibleLayers([11]);
-	legendLayers.push({layer:tyGehrmanPoints,title:'Normalized Uncertainty Reduction for Tyler Forks baseflow above confluence with Gehrman Creek'});
+	legendLayers.push({layer:tyGehrmanPoints,title:'New Data Worth for reducing model uncertainty in predicting Tyler Forks baseflow above confluence with Gehrman Creek'});
 
 	var spbrkBrunsPoints = new esri.layers.ArcGISDynamicMapServiceLayer("http://wim.usgs.gov/arcgis/rest/services/BadRiver/PREDUNC_results_No_Raster/MapServer", {
 		"visible":false,
 		id: 'spbrkBruns'
 	});
 	spbrkBrunsPoints.setVisibleLayers([12]);
-	legendLayers.push({layer:spbrkBrunsPoints,title:'Normalized Uncertainty Reduction for Spring Brook Creek above confluence with Brunsweiler River'});
+	legendLayers.push({layer:spbrkBrunsPoints,title:'New Data Worth for reducing model uncertainty in predicting Spring Brook Creek above confluence with Brunsweiler River'});
 
 	var prenticeParkPoints = new esri.layers.ArcGISDynamicMapServiceLayer("http://wim.usgs.gov/arcgis/rest/services/BadRiver/PREDUNC_results_No_Raster/MapServer", {
 		"visible":false,
 		id: 'prenticePark'
 	});
 	prenticeParkPoints.setVisibleLayers([13]);
-	legendLayers.push({layer:prenticeParkPoints,title:'Normalized Uncertainty Reduction for Water levels in artesian wells at Prentice Park'});
+	legendLayers.push({layer:prenticeParkPoints,title:'New Data Worth for reducing model uncertainty in predicting Water levels in artesian wells at Prentice Park'});
 
 	var minersvilleAPoints = new esri.layers.ArcGISDynamicMapServiceLayer("http://wim.usgs.gov/arcgis/rest/services/BadRiver/PREDUNC_results_No_Raster/MapServer", {
 		"visible":false,
 		id: 'minersvileA'
 	});
 	minersvilleAPoints.setVisibleLayers([14]);
-	legendLayers.push({layer:minersvilleAPoints,title:'Normalized Uncertainty Reduction for Water levels in artesian well at Minersville'});
+	legendLayers.push({layer:minersvilleAPoints,title:'New Data Worth for reducing model uncertainty in predicting Water levels in artesian well at Minersville'});
 
 	var bf121Points = new esri.layers.ArcGISDynamicMapServiceLayer("http://wim.usgs.gov/arcgis/rest/services/BadRiver/PREDUNC_results_No_Raster/MapServer", {
 		"visible":false,
 		id: 'bf121'
 	});
 	bf121Points.setVisibleLayers([15]);
-	legendLayers.push({layer:bf121Points,title:'Normalized Uncertainty Reduction for Water levels near Mellen municipal well'});
+	legendLayers.push({layer:bf121Points,title:'New Data Worth for reducing model uncertainty in predicting Water levels near Mellen municipal well'});
 
 	var graveyardPoints = new esri.layers.ArcGISDynamicMapServiceLayer("http://wim.usgs.gov/arcgis/rest/services/BadRiver/PREDUNC_results_No_Raster/MapServer", {
 		"visible":false,
 		id: 'graveyard'
 	});
 	graveyardPoints.setVisibleLayers([16]);
-	legendLayers.push({layer:graveyardPoints,title:'Normalized Uncertainty Reduction for Graveyard Creek baseflow, USGS site 4027689'});
+	legendLayers.push({layer:graveyardPoints,title:'New Data Worth for reducing model uncertainty in predicting Graveyard Creek baseflow, USGS site 4027689'});
 
 	var winksGurneyPoints = new esri.layers.ArcGISDynamicMapServiceLayer("http://wim.usgs.gov/arcgis/rest/services/BadRiver/PREDUNC_results_No_Raster/MapServer", {
 		"visible":false,
 		id: 'winksGurney'
 	});
 	winksGurneyPoints.setVisibleLayers([17]);
-	legendLayers.push({layer:winksGurneyPoints,title:'Normalized Uncertainty Reduction for Spring flow to Winks Creek near Gurney, WI, USGS site 4026911'});
+	legendLayers.push({layer:winksGurneyPoints,title:'New Data Worth for reducing model uncertainty in predicting Spring flow to Winks Creek near Gurney, WI, USGS site 4026911'});
 
 	var potatoUpson59Points = new esri.layers.ArcGISDynamicMapServiceLayer("http://wim.usgs.gov/arcgis/rest/services/BadRiver/PREDUNC_results_No_Raster/MapServer", {
 		"visible":false,
 		id: 'potatoUpson59'
 	});
 	potatoUpson59Points.setVisibleLayers([18]);
-	legendLayers.push({layer:potatoUpson59Points,title:'Normalized Uncertainty Reduction for Potato River baseflow near Upson, WI, USGS site 4026859'});
+	legendLayers.push({layer:potatoUpson59Points,title:'New Data Worth for reducing model uncertainty in predicting Potato River baseflow near Upson, WI, USGS site 4026859'});
 
 	var tylerMoorePoints = new esri.layers.ArcGISDynamicMapServiceLayer("http://wim.usgs.gov/arcgis/rest/services/BadRiver/PREDUNC_results_No_Raster/MapServer", {
 		"visible":false,
 		id: 'tylerMoore'
 	});
 	tylerMoorePoints.setVisibleLayers([19]);
-	legendLayers.push({layer:tylerMoorePoints,title:'Normalized Uncertainty Reduction for Tyler Forks baseflow at Moore Park Rd.'});
+	legendLayers.push({layer:tylerMoorePoints,title:'New Data Worth for reducing model uncertainty in predicting Tyler Forks baseflow at Moore Park Rd.'});
 
 	var tylerFork61Points = new esri.layers.ArcGISDynamicMapServiceLayer("http://wim.usgs.gov/arcgis/rest/services/BadRiver/PREDUNC_results_No_Raster/MapServer", {
 		"visible":false,
 		id: 'tylerFork61'
 	});
 	tylerFork61Points.setVisibleLayers([20]);
-	legendLayers.push({layer:tylerFork61Points,title:'Normalized Uncertainty Reduction for Tyler Forks baseflow at Stricker Rd., USGS site 4026561'});
+	legendLayers.push({layer:tylerFork61Points,title:'New Data Worth for reducing model uncertainty in predicting Tyler Forks baseflow at Stricker Rd., USGS site 4026561'});
 
 	var badMellenPoints = new esri.layers.ArcGISDynamicMapServiceLayer("http://wim.usgs.gov/arcgis/rest/services/BadRiver/PREDUNC_results_No_Raster/MapServer", {
 		"visible":false,
 		id: 'badMellen'
 	});
 	badMellenPoints.setVisibleLayers([21]);
-	legendLayers.push({layer:badMellenPoints,title:'Normalized Uncertainty Reduction for Bad River baseflow near Mellen, WI, USGS site 4026450'});
+	legendLayers.push({layer:badMellenPoints,title:'New Data Worth for reducing model uncertainty in predicting Bad River baseflow near Mellen, WI, USGS site 4026450'});
 
 	var cityMellenPoints = new esri.layers.ArcGISDynamicMapServiceLayer("http://wim.usgs.gov/arcgis/rest/services/BadRiver/PREDUNC_results_No_Raster/MapServer", {
 		"visible":false,
 		id: 'cityMellen'
 	});
 	cityMellenPoints.setVisibleLayers([22]);
-	legendLayers.push({layer:cityMellenPoints,title:'Normalized Uncertainty Reduction for City Creek baseflow, USGS site 40265095'});
+	legendLayers.push({layer:cityMellenPoints,title:'New Data Worth for reducing model uncertainty in predicting City Creek baseflow, USGS site 40265095'});
 	
 	var potatoGurney10Points = new esri.layers.ArcGISDynamicMapServiceLayer("http://wim.usgs.gov/arcgis/rest/services/BadRiver/PREDUNC_results_No_Raster/MapServer", {
 		"visible":false,
 		id: 'potatoGurney10'
 	});
 	potatoGurney10Points.setVisibleLayers([23]);
-	legendLayers.push({layer:potatoGurney10Points,title:'Normalized Uncertainty Reduction for Potato River baseflow near Gurney, WI, USGS site 4026910'});
+	legendLayers.push({layer:potatoGurney10Points,title:'New Data Worth for reducing model uncertainty in predicting Potato River baseflow near Gurney, WI, USGS site 4026910'});
 
 	var potatoGurney00Points = new esri.layers.ArcGISDynamicMapServiceLayer("http://wim.usgs.gov/arcgis/rest/services/BadRiver/PREDUNC_results_No_Raster/MapServer", {
 		"visible":false,
 		id: 'potatoGurney00'
 	});
 	potatoGurney00Points.setVisibleLayers([24]);
-	legendLayers.push({layer:potatoGurney00Points,title:'Normalized Uncertainty Reduction for Potato River baseflow near Gurney, WI, USGS site 4026900'});
+	legendLayers.push({layer:potatoGurney00Points,title:'New Data Worth for reducing model uncertainty in predicting Potato River baseflow near Gurney, WI, USGS site 4026900'});
 
 	var potatoUpson80Points = new esri.layers.ArcGISDynamicMapServiceLayer("http://wim.usgs.gov/arcgis/rest/services/BadRiver/PREDUNC_results_No_Raster/MapServer", {
 		"visible":false,
 		id: 'potatoUpson80'
 	});
 	potatoUpson80Points.setVisibleLayers([25]);
-	legendLayers.push({layer:potatoUpson80Points,title:'Normalized Uncertainty Reduction for Potato River baseflow near Upson, WI, USGS site 4026880'});
+	legendLayers.push({layer:potatoUpson80Points,title:'New Data Worth for reducing model uncertainty in predicting Potato River baseflow near Upson, WI, USGS site 4026880'});
 
 	var tylerForks30Points = new esri.layers.ArcGISDynamicMapServiceLayer("http://wim.usgs.gov/arcgis/rest/services/BadRiver/PREDUNC_results_No_Raster/MapServer", {
 		"visible":false,
 		id: 'tylerForks30'
 	});
 	tylerForks30Points.setVisibleLayers([26]);
-	legendLayers.push({layer:tylerForks30Points,title:'Normalized Uncertainty Reduction for Tyler Forks baseflow near Caroline Lake Rd., USGS site 4026530'});
+	legendLayers.push({layer:tylerForks30Points,title:'New Data Worth for reducing model uncertainty in predicting Tyler Forks baseflow near Caroline Lake Rd., USGS site 4026530'});
 
 	var badMorsePoints = new esri.layers.ArcGISDynamicMapServiceLayer("http://wim.usgs.gov/arcgis/rest/services/BadRiver/PREDUNC_results_No_Raster/MapServer", {
 		"visible":false,
 		id: 'badMorse'
 	});
 	badMorsePoints.setVisibleLayers([27]);
-	legendLayers.push({layer:badMorsePoints,title:'Normalized Uncertainty Reduction for Bad River baseflow near Morse, WI, USGS site 4026410'});
+	legendLayers.push({layer:badMorsePoints,title:'New Data Worth for reducing model uncertainty in predicting Bad River baseflow near Morse, WI, USGS site 4026410'});
 
 	var minnowMorsePoints = new esri.layers.ArcGISDynamicMapServiceLayer("http://wim.usgs.gov/arcgis/rest/services/BadRiver/PREDUNC_results_No_Raster/MapServer", {
 		"visible":false,
 		id: 'minnowMorse'
 	});
 	minnowMorsePoints.setVisibleLayers([28]);
-	legendLayers.push({layer:minnowMorsePoints,title:'Normalized Uncertainty Reduction for Minnow Creek baseflow near Morse, WI, USGS site 4026413'});
+	legendLayers.push({layer:minnowMorsePoints,title:'New Data Worth for reducing model uncertainty in predicting Minnow Creek baseflow near Morse, WI, USGS site 4026413'});
 
 	//BEGIN THE RASTER DECLARATIONS
 	var drawDown1Raster = new esri.layers.ArcGISDynamicMapServiceLayer("http://wim.usgs.gov/arcgis/rest/services/BadRiver/PredictionRasters/MapServer", {
@@ -351,7 +352,7 @@ function init() {
 		id: 'drawDown1Raster'
 	});
 	drawDown1Raster.setVisibleLayers([0]);
-	legendLayers.push({layer:drawDown1Raster,title:'Normalized Uncertainty Reduction for Groundwater levels Prediction 1'});
+	legendLayers.push({layer:drawDown1Raster,title:'New Data Worth for reducing model uncertainty in predicting Groundwater levels Prediction 1'});
 
 	var drawDown2Raster = new esri.layers.ArcGISDynamicMapServiceLayer("http://wim.usgs.gov/arcgis/rest/services/BadRiver/PredictionRasters/MapServer", {
 		"visible":false,
@@ -359,7 +360,7 @@ function init() {
 		id: 'drawDown2Raster'
 	});
 	drawDown2Raster.setVisibleLayers([1]);
-	legendLayers.push({layer:drawDown2Raster,title:'Normalized Uncertainty Reduction for Groundwater levels Prediction 2'});
+	legendLayers.push({layer:drawDown2Raster,title:'New Data Worth for reducing model uncertainty in predicting Groundwater levels Prediction 2'});
 
 	var drawDown3Raster = new esri.layers.ArcGISDynamicMapServiceLayer("http://wim.usgs.gov/arcgis/rest/services/BadRiver/PredictionRasters/MapServer", {
 		"visible":false,
@@ -367,7 +368,7 @@ function init() {
 		id: 'drawDown3Raster'
 	});
 	drawDown3Raster.setVisibleLayers([2]);
-	legendLayers.push({layer:drawDown3Raster,title:'Normalized Uncertainty Reduction for Groundwater levels Prediction 3'});
+	legendLayers.push({layer:drawDown3Raster,title:'New Data Worth for reducing model uncertainty in predicting Groundwater levels Prediction 3'});
 
 	var fishHatchRaster = new esri.layers.ArcGISDynamicMapServiceLayer("http://wim.usgs.gov/arcgis/rest/services/BadRiver/PredictionRasters/MapServer", {
 		"visible":false,
@@ -375,7 +376,7 @@ function init() {
 		id: 'fishHatchRaster'
 	});
 	fishHatchRaster.setVisibleLayers([3]);
-	legendLayers.push({layer:fishHatchRaster,title:'Normalized Uncertainty Reduction for Water level in artesian well at Bad River Fish Hatchery'});
+	legendLayers.push({layer:fishHatchRaster,title:'New Data Worth for reducing model uncertainty in predicting Water level in artesian well at Bad River Fish Hatchery'});
 
 	var resSwRaster = new esri.layers.ArcGISDynamicMapServiceLayer("http://wim.usgs.gov/arcgis/rest/services/BadRiver/PredictionRasters/MapServer", {
 		"visible":false,
@@ -383,7 +384,7 @@ function init() {
 		id: 'resSwRaster'
 	});
 	resSwRaster.setVisibleLayers([4]);
-	legendLayers.push({layer:resSwRaster,title:'Normalized Uncertainty Reduction for Groundwater levels at southwest corner of reservation'});
+	legendLayers.push({layer:resSwRaster,title:'New Data Worth for reducing model uncertainty in predicting Groundwater levels at southwest corner of reservation'});
 
 	var resSeRaster = new esri.layers.ArcGISDynamicMapServiceLayer("http://wim.usgs.gov/arcgis/rest/services/BadRiver/PredictionRasters/MapServer", {
 		"visible":false,
@@ -391,7 +392,7 @@ function init() {
 		id: 'resSeRaster'
 	});
 	resSeRaster.setVisibleLayers([5])
-	legendLayers.push({layer:resSeRaster,title:'Normalized Uncertainty Reduction for Groundwater levels at southeast corner of reservation'});
+	legendLayers.push({layer:resSeRaster,title:'New Data Worth for reducing model uncertainty in predicting Groundwater levels at southeast corner of reservation'});
 
 	var resSRaster = new esri.layers.ArcGISDynamicMapServiceLayer("http://wim.usgs.gov/arcgis/rest/services/BadRiver/PredictionRasters/MapServer", {
 		"visible":false,
@@ -399,7 +400,7 @@ function init() {
 		id: 'resSRaster'
 	});
 	resSRaster.setVisibleLayers([6]);
-	legendLayers.push({layer:resSRaster,title:'Normalized Uncertainty Reduction for Groundwater levels near middle part of southern reservation boundary'});
+	legendLayers.push({layer:resSRaster,title:'New Data Worth for reducing model uncertainty in predicting Groundwater levels near middle part of southern reservation boundary'});
 
 	var carolineRaster = new esri.layers.ArcGISDynamicMapServiceLayer("http://wim.usgs.gov/arcgis/rest/services/BadRiver/PredictionRasters/MapServer", {
 		"visible":false,
@@ -407,7 +408,7 @@ function init() {
 		id: 'carolineRaster'
 	});
 	carolineRaster.setVisibleLayers([7])
-	legendLayers.push({layer:carolineRaster,title:'Normalized Uncertainty Reduction for Groundwater levels near Caroline Lake'});
+	legendLayers.push({layer:carolineRaster,title:'New Data Worth for reducing model uncertainty in predicting Groundwater levels near Caroline Lake'});
 
 	var obrienRaster = new esri.layers.ArcGISDynamicMapServiceLayer("http://wim.usgs.gov/arcgis/rest/services/BadRiver/PredictionRasters/MapServer", {
 		"visible":false,
@@ -415,7 +416,7 @@ function init() {
 		id: 'obrienRaster'
 	});
 	obrienRaster.setVisibleLayers([8]);
-	legendLayers.push({layer:obrienRaster,title:"Normalized Uncertainty Reduction for Groundwater levels near O'brien Lake"});
+	legendLayers.push({layer:obrienRaster,title:"New Data Worth for reducing model uncertainty in predicting Groundwater levels near O'brien Lake"});
 
 	var mccarthyRaster = new esri.layers.ArcGISDynamicMapServiceLayer("http://wim.usgs.gov/arcgis/rest/services/BadRiver/PredictionRasters/MapServer", {
 		"visible":false,
@@ -423,7 +424,7 @@ function init() {
 		id: 'mccarthyRaster'
 	});
 	mccarthyRaster.setVisibleLayers([9]);
-	legendLayers.push({layer:mccarthyRaster,title:'Normalized Uncertainty Reduction for Groundwater levels near McCarthy Lake'});
+	legendLayers.push({layer:mccarthyRaster,title:'New Data Worth for reducing model uncertainty in predicting Groundwater levels near McCarthy Lake'});
 
 	var bad169Raster = new esri.layers.ArcGISDynamicMapServiceLayer("http://wim.usgs.gov/arcgis/rest/services/BadRiver/PredictionRasters/MapServer", {
 		"visible":false,
@@ -431,7 +432,7 @@ function init() {
 		id: 'bad169Raster'
 	});
 	bad169Raster.setVisibleLayers([10])
-	legendLayers.push({layer:bad169Raster,title:'Normalized Uncertainty Reduction for Bad River baseflow at highway 169'});
+	legendLayers.push({layer:bad169Raster,title:'New Data Worth for reducing model uncertainty in predicting Bad River baseflow at highway 169'});
 
 	var tyGehrmanRaster = new esri.layers.ArcGISDynamicMapServiceLayer("http://wim.usgs.gov/arcgis/rest/services/BadRiver/PredictionRasters/MapServer", {
 		"visible":false,
@@ -439,7 +440,7 @@ function init() {
 		id: 'tyGehrmanRaster'
 	});
 	tyGehrmanRaster.setVisibleLayers([11]);
-	legendLayers.push({layer:tyGehrmanRaster,title:'Normalized Uncertainty Reduction for Tyler Forks baseflow above confluence with Gehrman Creek'});
+	legendLayers.push({layer:tyGehrmanRaster,title:'New Data Worth for reducing model uncertainty in predicting Tyler Forks baseflow above confluence with Gehrman Creek'});
 
 	var spbrkBrunsRaster = new esri.layers.ArcGISDynamicMapServiceLayer("http://wim.usgs.gov/arcgis/rest/services/BadRiver/PredictionRasters/MapServer", {
 		"visible":false,
@@ -447,7 +448,7 @@ function init() {
 		id: 'spbrkBrunsRaster'
 	});
 	spbrkBrunsRaster.setVisibleLayers([12]);
-	legendLayers.push({layer:spbrkBrunsRaster,title:'Normalized Uncertainty Reduction for Spring Brook Creek above confluence with Brunsweiler River'});
+	legendLayers.push({layer:spbrkBrunsRaster,title:'New Data Worth for reducing model uncertainty in predicting Spring Brook Creek above confluence with Brunsweiler River'});
 
 	var prenticeParkRaster = new esri.layers.ArcGISDynamicMapServiceLayer("http://wim.usgs.gov/arcgis/rest/services/BadRiver/PredictionRasters/MapServer", {
 		"visible":false,
@@ -455,7 +456,7 @@ function init() {
 		id: 'prenticeParkRaster'
 	});
 	prenticeParkRaster.setVisibleLayers([13]);
-	legendLayers.push({layer:prenticeParkRaster,title:'Normalized Uncertainty Reduction for Water levels in artesian wells at Prentice Park'});
+	legendLayers.push({layer:prenticeParkRaster,title:'New Data Worth for reducing model uncertainty in predicting Water levels in artesian wells at Prentice Park'});
 
 	var minersvilleARaster = new esri.layers.ArcGISDynamicMapServiceLayer("http://wim.usgs.gov/arcgis/rest/services/BadRiver/PredictionRasters/MapServer", {
 		"visible":false,
@@ -463,7 +464,7 @@ function init() {
 		id: 'minersvilleARaster'
 	});
 	minersvilleARaster.setVisibleLayers([14]);
-	legendLayers.push({layer:minersvilleARaster,title:'Normalized Uncertainty Reduction for Water levels in artesian well at Minersville'});
+	legendLayers.push({layer:minersvilleARaster,title:'New Data Worth for reducing model uncertainty in predicting Water levels in artesian well at Minersville'});
 
 	var bf121Raster = new esri.layers.ArcGISDynamicMapServiceLayer("http://wim.usgs.gov/arcgis/rest/services/BadRiver/PredictionRasters/MapServer", {
 		"visible":false,
@@ -471,7 +472,7 @@ function init() {
 		id: 'bf121Raster'
 	});
 	bf121Raster.setVisibleLayers([15]);
-	legendLayers.push({layer:bf121Raster,title:'Normalized Uncertainty Reduction for Water levels near Mellen municipal well'});
+	legendLayers.push({layer:bf121Raster,title:'New Data Worth for reducing model uncertainty in predicting Water levels near Mellen municipal well'});
 
 	var graveyardRaster = new esri.layers.ArcGISDynamicMapServiceLayer("http://wim.usgs.gov/arcgis/rest/services/BadRiver/PredictionRasters/MapServer", {
 		"visible":false,
@@ -479,7 +480,7 @@ function init() {
 		id: 'graveyardRaster'
 	});
 	graveyardRaster.setVisibleLayers([16]);
-	legendLayers.push({layer:graveyardRaster,title:'Normalized Uncertainty Reduction for Graveyard Creek baseflow, USGS site 4027689'});
+	legendLayers.push({layer:graveyardRaster,title:'New Data Worth for reducing model uncertainty in predicting Graveyard Creek baseflow, USGS site 4027689'});
 
 	var winksGurneyRaster = new esri.layers.ArcGISDynamicMapServiceLayer("http://wim.usgs.gov/arcgis/rest/services/BadRiver/PredictionRasters/MapServer", {
 		"visible":false,
@@ -487,7 +488,7 @@ function init() {
 		id: 'winksGurneyRaster'
 	});
 	winksGurneyRaster.setVisibleLayers([17]);
-	legendLayers.push({layer:winksGurneyRaster,title:'Normalized Uncertainty Reduction for Spring flow to Winks Creek near Gurney, WI, USGS site 4026911'});
+	legendLayers.push({layer:winksGurneyRaster,title:'New Data Worth for reducing model uncertainty in predicting Spring flow to Winks Creek near Gurney, WI, USGS site 4026911'});
 
 	var potatoUpson59Raster = new esri.layers.ArcGISDynamicMapServiceLayer("http://wim.usgs.gov/arcgis/rest/services/BadRiver/PredictionRasters/MapServer", {
 		"visible":false,
@@ -495,7 +496,7 @@ function init() {
 		id: 'potatoUpson59Raster'
 	});
 	potatoUpson59Raster.setVisibleLayers([18]);
-	legendLayers.push({layer:potatoUpson59Raster,title:'Normalized Uncertainty Reduction for Potato River baseflow near Upson, WI, USGS site 4026859'});
+	legendLayers.push({layer:potatoUpson59Raster,title:'New Data Worth for reducing model uncertainty in predicting Potato River baseflow near Upson, WI, USGS site 4026859'});
 
 	var tylerMooreRaster = new esri.layers.ArcGISDynamicMapServiceLayer("http://wim.usgs.gov/arcgis/rest/services/BadRiver/PredictionRasters/MapServer", {
 		"visible":false,
@@ -503,7 +504,7 @@ function init() {
 		id: 'tylerMooreRaster'
 	});
 	tylerMooreRaster.setVisibleLayers([19]);
-	legendLayers.push({layer:tylerMooreRaster,title:'Normalized Uncertainty Reduction for Tyler Forks baseflow at Moore Park Rd.'});
+	legendLayers.push({layer:tylerMooreRaster,title:'New Data Worth for reducing model uncertainty in predicting Tyler Forks baseflow at Moore Park Rd.'});
 
 	var tylerFork61Raster = new esri.layers.ArcGISDynamicMapServiceLayer("http://wim.usgs.gov/arcgis/rest/services/BadRiver/PredictionRasters/MapServer", {
 		"visible":false,
@@ -511,7 +512,7 @@ function init() {
 		id: 'tylerFork61Raster'
 	});
 	tylerFork61Raster.setVisibleLayers([20]);
-	legendLayers.push({layer:tylerFork61Raster,title:'Normalized Uncertainty Reduction for Tyler Forks baseflow at Stricker Rd., USGS site 4026561'});
+	legendLayers.push({layer:tylerFork61Raster,title:'New Data Worth for reducing model uncertainty in predicting Tyler Forks baseflow at Stricker Rd., USGS site 4026561'});
 
 	var badMellenRaster = new esri.layers.ArcGISDynamicMapServiceLayer("http://wim.usgs.gov/arcgis/rest/services/BadRiver/PredictionRasters/MapServer", {
 		"visible":false,
@@ -519,7 +520,7 @@ function init() {
 		id: 'badMellenRaster'
 	});
 	badMellenRaster.setVisibleLayers([21]);
-	legendLayers.push({layer:badMellenRaster,title:'Normalized Uncertainty Reduction for Bad River baseflow near Mellen, WI, USGS site 4026450'});
+	legendLayers.push({layer:badMellenRaster,title:'New Data Worth for reducing model uncertainty in predicting Bad River baseflow near Mellen, WI, USGS site 4026450'});
 
 	var cityMellenRaster = new esri.layers.ArcGISDynamicMapServiceLayer("http://wim.usgs.gov/arcgis/rest/services/BadRiver/PredictionRasters/MapServer", {
 		"visible":false,
@@ -527,7 +528,7 @@ function init() {
 		id: 'cityMellenRaster'
 	});
 	cityMellenRaster.setVisibleLayers([22]);
-	legendLayers.push({layer:cityMellenRaster,title:'Normalized Uncertainty Reduction for City Creek baseflow, USGS site 40265095'});
+	legendLayers.push({layer:cityMellenRaster,title:'New Data Worth for reducing model uncertainty in predicting City Creek baseflow, USGS site 40265095'});
 
 	var potatoGurney10Raster = new esri.layers.ArcGISDynamicMapServiceLayer("http://wim.usgs.gov/arcgis/rest/services/BadRiver/PredictionRasters/MapServer", {
 		"visible":false,
@@ -535,7 +536,7 @@ function init() {
 		id: 'potatoGurney10Raster'
 	});
 	potatoGurney10Raster.setVisibleLayers([23]);
-	legendLayers.push({layer:potatoGurney10Raster,title:'Normalized Uncertainty Reduction for Potato River baseflow near Gurney, WI, USGS site 4026910'});
+	legendLayers.push({layer:potatoGurney10Raster,title:'New Data Worth for reducing model uncertainty in predicting Potato River baseflow near Gurney, WI, USGS site 4026910'});
 
 	var potatoGurney00Raster = new esri.layers.ArcGISDynamicMapServiceLayer("http://wim.usgs.gov/arcgis/rest/services/BadRiver/PredictionRasters/MapServer", {
 		"visible":false,
@@ -543,7 +544,7 @@ function init() {
 		id: 'potatoGurney00Raster'
 	});
 	potatoGurney00Raster.setVisibleLayers([24]);
-	legendLayers.push({layer:potatoGurney00Raster,title:'Normalized Uncertainty Reduction for Potato River baseflow near Gurney, WI, USGS site 4026900'});
+	legendLayers.push({layer:potatoGurney00Raster,title:'New Data Worth for reducing model uncertainty in predicting Potato River baseflow near Gurney, WI, USGS site 4026900'});
 
 	var potatoUpson80Raster = new esri.layers.ArcGISDynamicMapServiceLayer("http://wim.usgs.gov/arcgis/rest/services/BadRiver/PredictionRasters/MapServer", {
 		"visible":false,
@@ -551,7 +552,7 @@ function init() {
 		id: 'potatoUpson80Raster'
 	});
 	potatoUpson80Raster.setVisibleLayers([25]);
-	legendLayers.push({layer:potatoUpson80Raster,title:'Normalized Uncertainty Reduction for Potato River baseflow near Upson, WI, USGS site 4026880'});
+	legendLayers.push({layer:potatoUpson80Raster,title:'New Data Worth for reducing model uncertainty in predicting Potato River baseflow near Upson, WI, USGS site 4026880'});
 
 	var tylerForks30Raster = new esri.layers.ArcGISDynamicMapServiceLayer("http://wim.usgs.gov/arcgis/rest/services/BadRiver/PredictionRasters/MapServer", {
 		"visible":false,
@@ -559,7 +560,7 @@ function init() {
 		id: 'tylerForks30Raster'
 	});
 	tylerForks30Raster.setVisibleLayers([26]);
-	legendLayers.push({layer:tylerForks30Raster,title:'Normalized Uncertainty Reduction for Tyler Forks baseflow near Caroline Lake Rd., USGS site 4026530'});
+	legendLayers.push({layer:tylerForks30Raster,title:'New Data Worth for reducing model uncertainty in predicting Tyler Forks baseflow near Caroline Lake Rd., USGS site 4026530'});
 
 	var badMorseRaster = new esri.layers.ArcGISDynamicMapServiceLayer("http://wim.usgs.gov/arcgis/rest/services/BadRiver/PredictionRasters/MapServer", {
 		"visible":false,
@@ -567,7 +568,7 @@ function init() {
 		id: 'badMorseRaster'
 	});
 	badMorseRaster.setVisibleLayers([27]);
-	legendLayers.push({layer:badMorseRaster,title:'Normalized Uncertainty Reduction for Bad River baseflow near Morse, WI, USGS site 4026410'});
+	legendLayers.push({layer:badMorseRaster,title:'New Data Worth for reducing model uncertainty in predicting Bad River baseflow near Morse, WI, USGS site 4026410'});
 
 	var minnowMorseRaster = new esri.layers.ArcGISDynamicMapServiceLayer("http://wim.usgs.gov/arcgis/rest/services/BadRiver/PredictionRasters/MapServer", {
 		"visible":false,
@@ -575,7 +576,7 @@ function init() {
 		id: 'minnowMorseRaster'
 	});
 	minnowMorseRaster.setVisibleLayers([28]);
-	legendLayers.push({layer:minnowMorseRaster,title:'Normalized Uncertainty Reduction for Minnow Creek baseflow near Morse, WI, USGS site 4026413'});
+	legendLayers.push({layer:minnowMorseRaster,title:'New Data Worth for reducing model uncertainty in predicting Minnow Creek baseflow near Morse, WI, USGS site 4026413'});
 
 
 
@@ -786,16 +787,25 @@ function init() {
 					//don't change predictionLayerId unless a prediction layer point is clicked 
 					showUncertaintyLayer(predictionLayerID);
 
-				} else {
-					map.infoWindow.resize(300,250);
-					template = new esri.InfoTemplate("<b>Uncertainty Reduction</b>",
-						"<b>Reduction in Uncertainty relative to base uncertainty:</b></br>${Norm_reduc}</br>"+
-						"<b>New Observation Name:</b></br>${newobsname}</br>"+
-						"<b>Pre-Calibration Uncertainty with the base dataset:</b></br>${base_unc}</br>"+
-						"<b>Post-Calibration Uncertainty with the new observation:</b></br>${pstcal_unc}</br>"+
-						"<b>Corresponding Model Prediction Location:</b></br>${Prediction}</br>");
-				}
-					
+				} 	else{			
+					if (result.feature.attributes.Type == "baseflow"){
+						map.infoWindow.resize(300,250);
+						template = new esri.InfoTemplate("<b>Data Worth Analysis</b>",
+							"<b>Reduction in Uncertainty relative to base uncertainty:</b></br>${Norm_reduc}</br>"+
+							"<b>New Observation Name:</b></br>${newobsname}</br>"+
+							"<b>Pre-Calibration Uncertainty with the base dataset:</b></br>${base_unc} cubic feet per day</br>"+
+							"<b>Post-Calibration Uncertainty with the new observation:</b></br>${pstcal_unc} cubic feet per day</br>"+
+							"<b>Corresponding Model Prediction Location:</b></br>${Prediction}</br>");
+					} else{
+						map.infoWindow.resize(300,250);
+						template = new esri.InfoTemplate("<b>Data Worth Analysis</b>",
+							"<b>Reduction in Uncertainty relative to base uncertainty:</b></br>${Norm_reduc}</br>"+
+							"<b>New Observation Name:</b></br>${newobsname}</br>"+
+							"<b>Pre-Calibration Uncertainty with the base dataset:</b></br>${base_unc} feet</br>"+
+							"<b>Post-Calibration Uncertainty with the new observation:</b></br>${pstcal_unc} feet</br>"+
+							"<b>Corresponding Model Prediction Location:</b></br>${Prediction}</br>");
+					}
+				}	
 				//ties the above defined InfoTemplate to the feature result returned from a click event	
                 feature.setInfoTemplate(template);
 				//returns the value of feature, which is the result of the click event
@@ -984,16 +994,18 @@ function init() {
 				document.getElementById('hideButton').style.display="none";
 				document.getElementById('drawButton').style.display="none";
 				map.getLayer(mapLayerName).show();
-				document.getElementById('legendExplanation').style.visibility="visible";
-				document.getElementById('legendExplanation2').style.visibility="visible";
+				document.getElementById('legendExplanation').style.display="block";
+				document.getElementById('legendExplanation2').style.display="block";
+				document.getElementById('rasterExplanation').style.display="none";
 			} 
 			map.getLayer(mapLayerName).show();
 			currentlyVisible = mapLayerName;
 			document.getElementById('rasterButton').style.display="block";
 			document.getElementById('hideButton').style.display="block";
 			document.getElementById('drawButton').style.display="block";
-			document.getElementById('legendExplanation').style.visibility="visible";
-			document.getElementById('legendExplanation2').style.visibility="visible";
+			document.getElementById('legendExplanation').style.display="block";
+			document.getElementById('legendExplanation2').style.display="block";
+			document.getElementById('rasterExplanation').style.display="none";
 		
 		//if nothing is
 		} else {
@@ -1002,8 +1014,9 @@ function init() {
 				document.getElementById('rasterButton').style.display="none";
 				document.getElementById('hideButton').style.display="none";
 				document.getElementById('drawButton').style.display="none";
-				document.getElementById('legendExplanation').style.visibility="hidden";
-				document.getElementById('legendExplanation2').style.visibility="hidden";
+				document.getElementById('legendExplanation').style.display="none";
+				document.getElementById('legendExplanation2').style.display="none";
+				document.getElementById('rasterExplanation').style.display="none";
 			}
 		}
 	}
@@ -1015,6 +1028,15 @@ function init() {
     dojo.connect(locator, "onAddressToLocationsComplete", showResults);
 	
 	document.getElementById('rasterButton').innerHTML="Show Uncertainty Layer Surface";
+
+
+
+    $("#helpIcon").click(function(){
+    	$("#helpDialog").dialog({
+    		dialogClass: 'helpDialog',
+    		resizable: false
+    	});
+    });
 }
 //end of init function	
 
@@ -1100,8 +1122,9 @@ function hideUncertaintyLayer(){
 	document.getElementById('rasterButton').style.display="none";
 	document.getElementById('hideButton').style.display="none";
 	document.getElementById('drawButton').style.display="none";
-	document.getElementById('legendExplanation').style.visibility="hidden";
-	document.getElementById('legendExplanation2').style.visibility="hidden";
+	document.getElementById('legendExplanation').style.display="none";
+	document.getElementById('legendExplanation2').style.display="none";
+	document.getElementById('rasterExplanation').style.display="none";
 	//FUTURE: remove last item from identifyLayers Arr if using that for the raster popup. ......MUST BE ABOVE tb.deactivate();
 	//identifyLayersArr.pop();
 	tb.deactivate();
@@ -1117,8 +1140,9 @@ function toggleRaster(){
 
 		document.getElementById('rasterButton').innerHTML="Show Uncertainty Layer Points";
 		document.getElementById('drawButton').style.display="none";
-		document.getElementById('legendExplanation').style.visibility="hidden";
-		document.getElementById('legendExplanation2').style.visibility="hidden";
+		document.getElementById('legendExplanation').style.display="none";
+		document.getElementById('legendExplanation2').style.display="none";
+		document.getElementById('rasterExplanation').style.display="block";
 		
 		//show the raster
 		map.getLayer(rasterLayer).show();
@@ -1134,8 +1158,9 @@ function toggleRaster(){
 		//show the drawButton
 		document.getElementById('rasterButton').innerHTML="Show Uncertainty Layer Surface";
 		document.getElementById('drawButton').style.display="block";
-		document.getElementById('legendExplanation').style.visibility="visible";
-		document.getElementById('legendExplanation2').style.visibility="visible";
+		document.getElementById('legendExplanation').style.display="block";
+		document.getElementById('legendExplanation2').style.display="block";
+		document.getElementById('rasterExplanation').style.display="none";
 	}
 }
 
@@ -1189,15 +1214,27 @@ function drawBox(){
 					//don't change predictionLayerId unless a prediction layer point is clicked 
 					showUncertaintyLayer(predictionLayerID);
 
-				} else {
-					map.infoWindow.resize(300,250);
-					template = new esri.InfoTemplate("<b>Data Work Analysis</b>",
-						"<b>Reduction in Uncertainty relative to base uncertainty:</b></br>${Norm_reduc}</br>"+
-						"<b>New Observation Name:</b></br>${newobsname}</br>"+
-						"<b>Pre-Calibration Uncertainty with the base dataset:</b></br>${base_unc}</br>"+
-						"<b>Post-Calibration Uncertainty with the new observation:</b></br>${pstcal_unc}</br>"+
-						"<b>Corresponding Model Prediction Location:</b></br>${Prediction}</br>");
-				}
+				} else{
+
+					if (result.feature.attributes.Type == "baseflow"){
+						map.infoWindow.resize(300,250);
+						template = new esri.InfoTemplate("<b>Data Worth Analysis</b>",
+							"<b>Reduction in Uncertainty relative to base uncertainty:</b></br>${Norm_reduc}</br>"+
+							"<b>New Observation Name:</b></br>${newobsname}</br>"+
+							"<b>Pre-Calibration Uncertainty with the base dataset:</b></br>${base_unc} cubic feet per day</br>"+
+							"<b>Post-Calibration Uncertainty with the new observation:</b></br>${pstcal_unc} cubic feet per day</br>"+
+							"<b>Corresponding Model Prediction Location:</b></br>${Prediction}</br>");
+					} else{
+						map.infoWindow.resize(300,250);
+						template = new esri.InfoTemplate("<b>Data Worth Analysis</b>",
+							"<b>Reduction in Uncertainty relative to base uncertainty:</b></br>${Norm_reduc}</br>"+
+							"<b>New Observation Name:</b></br>${newobsname}</br>"+
+							"<b>Pre-Calibration Uncertainty with the base dataset:</b></br>${base_unc} feet</br>"+
+							"<b>Post-Calibration Uncertainty with the new observation:</b></br>${pstcal_unc} feet</br>"+
+							"<b>Corresponding Model Prediction Location:</b></br>${Prediction}</br>");
+					}
+				}	
+				
 					
 				//ties the above defined InfoTemplate to the feature result returned from a click event	
                 feature.setInfoTemplate(template);
@@ -1224,6 +1261,7 @@ function drawBox(){
 		map.infoWindow.show(infoWindowPoint);
     });
 }
+
 
 dojo.ready(init);
 //IMPORTANT: while easy to miss, this little line above makes everything work. it fires when the DOM is ready and all dojo.require calls have been resolved. 
