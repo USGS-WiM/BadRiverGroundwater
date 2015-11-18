@@ -45,7 +45,25 @@ html, body {
 	z-index: 1;
 	display: inline;
 	font-family: BryantRegular, "Lucida Sans Unicode", "Lucida Grande", sans-serif ;
-	font-size: 40px;
+	font-size: 2.0em;
+}
+
+@media screen and (max-width:1200px){
+	#header{
+		font-size:1.75em;
+	}
+}
+
+@media screen and (max-width:1075px){
+	#header{
+		font-size:1.0em;
+	}
+}
+
+@media screen and (max-width:900){
+	#header{
+		font-size:0.75em;
+	}
 }
 
 #usgsLogoDiv {
