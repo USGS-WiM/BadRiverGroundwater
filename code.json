@@ -1,0 +1,45 @@
+[
+  {
+    "name": "BadRiverGroundwater",
+    "organization": "U.S. Geological Survey",
+    "description": "groundwater modeling in the Bad River watershed",
+    "version": "v0.0.0",
+    "status":"Production"
+
+    "permissions": {
+      "usageType": "openSource",
+      "licenses": [
+        {
+          "name": "Public Domain",
+          "URL": "https://github.com/USGS-WiM/BadRiverGroundwater/blob/master/LICENSE.md"
+        }
+      ]
+    },
+
+    "homepageURL": "https://wim.usgs.gov",
+    "downloadURL": "https://github.com/USGS-WiM/BadRiverGroundwater/archive/BadRiverGroundwater-master.zip",
+    "disclaimerURL": "https://github.com/USGS-WiM/BadRiverGroundwater/blob/master/LICENSE.md",
+    "repositoryUrl": "https://github.com/USGS-WiM/BadRiverGroundwater",
+    "vcs": "git",
+
+    "laborHours": null,
+
+    "tags": [
+      "Bad River",
+      "Groundwater",
+    ],
+
+    "languages": [
+      "javascript"
+    ],
+
+    "contact": {
+      "name": "Erik Myers",
+      "email": "emyers@usgs.gov"
+    },
+
+    "date": {
+      "metadataLastUpdated": "2018-02-07"
+    }
+  }
+]
