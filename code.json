@@ -4,7 +4,7 @@
     "organization": "U.S. Geological Survey",
     "description": "groundwater modeling in the Bad River watershed",
     "version": "v0.0.0",
-    "status":"Production"
+    "status":"Production",
 
     "permissions": {
       "usageType": "openSource",
@@ -26,7 +26,7 @@
 
     "tags": [
       "Bad River",
-      "Groundwater",
+      "Groundwater"
     ],
 
     "languages": [
