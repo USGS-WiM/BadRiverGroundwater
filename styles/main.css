@@ -10,18 +10,18 @@ html, body {
 
 @font-face {
 	font-family: BryantRegular;
-	src: url('http://wim.usgs.gov/fonts/Bryant2Combo/Bryant2/Bryant-Regular.otf'), 
-		url('http://wim.usgs.gov/fonts/Bryant2Combo/Bryant2Web_EOT/BryantWebRegular.eot'),
-		url('http://localhost/HTML5/fonts/Bryant2Combo/Bryant2/Bryant-Regular.otf'),
-		url('http://localhost/HTML5/fonts/Bryant2Combo/Bryant2Web_EOT/BryantWebRegular.eot') /* IE9 */
+	src: url('https://wim.usgs.gov/fonts/Bryant2Combo/Bryant2/Bryant-Regular.otf'), 
+		url('https://wim.usgs.gov/fonts/Bryant2Combo/Bryant2Web_EOT/BryantWebRegular.eot'),
+		url('https://localhost/HTML5/fonts/Bryant2Combo/Bryant2/Bryant-Regular.otf'),
+		url('https://localhost/HTML5/fonts/Bryant2Combo/Bryant2Web_EOT/BryantWebRegular.eot') /* IE9 */
 }
 
 @font-face {
 	font-family: BryantBold;
-	src: url('http://wim.usgs.gov/fonts/Bryant2Combo/Bryant2/Bryant-Bold.otf'), 
-		url('http://wim.usgs.gov/fonts/Bryant2Combo/Bryant2Web_EOT/BryantWebBold.eot'),
-		url('http://localhost/HTML5/fonts/Bryant2Combo/Bryant2/Bryant-Bold.otf'),
-		url('http://localhost/HTML5/fonts/Bryant2Combo/Bryant2Web_EOT/BryantWebBold.eot') /* IE9 */
+	src: url('https://wim.usgs.gov/fonts/Bryant2Combo/Bryant2/Bryant-Bold.otf'), 
+		url('https://wim.usgs.gov/fonts/Bryant2Combo/Bryant2Web_EOT/BryantWebBold.eot'),
+		url('https://localhost/HTML5/fonts/Bryant2Combo/Bryant2/Bryant-Bold.otf'),
+		url('https://localhost/HTML5/fonts/Bryant2Combo/Bryant2Web_EOT/BryantWebBold.eot') /* IE9 */
 }
 
 #map {
@@ -158,10 +158,10 @@ button {
 
 #usgsLinks {
 	font-family: BryantRegular;
-	src: url('http://wim.usgs.gov/fonts/Bryant2Combo/Bryant2/Bryant-Regular.otf'), 
-		url('http://wim.usgs.gov/fonts/Bryant2Combo/Bryant2Web_EOT/BryantWebRegular.eot'),
-		url('http://localhost/HTML5/fonts/Bryant2Combo/Bryant2/Bryant-Regular.otf'),
-		url('http://localhost/HTML5/fonts/Bryant2Combo/Bryant2Web_EOT/BryantWebRegular.eot') /* IE9 */
+	src: url('https://wim.usgs.gov/fonts/Bryant2Combo/Bryant2/Bryant-Regular.otf'), 
+		url('https://wim.usgs.gov/fonts/Bryant2Combo/Bryant2Web_EOT/BryantWebRegular.eot'),
+		url('https://localhost/HTML5/fonts/Bryant2Combo/Bryant2/Bryant-Regular.otf'),
+		url('https://localhost/HTML5/fonts/Bryant2Combo/Bryant2Web_EOT/BryantWebRegular.eot') /* IE9 */
 	margin-top: 0px;
 	position: absolute;
 	padding-top: 0px;
@@ -294,10 +294,10 @@ button {
 
 #infoWindow {
 	font-family: BryantRegular;
-	src: url('http://wim.usgs.gov/fonts/Bryant2Combo/Bryant2/Bryant-Regular.otf'), 
-		url('http://wim.usgs.gov/fonts/Bryant2Combo/Bryant2Web_EOT/BryantWebRegular.eot'),
-		url('http://localhost/HTML5/fonts/Bryant2Combo/Bryant2/Bryant-Regular.otf'),
-		url('http://localhost/HTML5/fonts/Bryant2Combo/Bryant2Web_EOT/BryantWebRegular.eot') /* IE9 */
+	src: url('https://wim.usgs.gov/fonts/Bryant2Combo/Bryant2/Bryant-Regular.otf'), 
+		url('https://wim.usgs.gov/fonts/Bryant2Combo/Bryant2Web_EOT/BryantWebRegular.eot'),
+		url('https://localhost/HTML5/fonts/Bryant2Combo/Bryant2/Bryant-Regular.otf'),
+		url('https://localhost/HTML5/fonts/Bryant2Combo/Bryant2Web_EOT/BryantWebRegular.eot') /* IE9 */
 	position: absolute;
 	top: 0px;
 	left: 0px;
